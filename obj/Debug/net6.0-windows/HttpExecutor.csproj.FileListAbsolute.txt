@@ -1,0 +1,17 @@
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\bin\Debug\net6.0-windows\HttpExecutor.exe
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\bin\Debug\net6.0-windows\HttpExecutor.deps.json
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\bin\Debug\net6.0-windows\HttpExecutor.runtimeconfig.json
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\bin\Debug\net6.0-windows\HttpExecutor.dll
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\bin\Debug\net6.0-windows\HttpExecutor.pdb
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\obj\Debug\net6.0-windows\HttpExecutor.csproj.AssemblyReference.cache
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\obj\Debug\net6.0-windows\HttpExecutor.Form1.resources
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\obj\Debug\net6.0-windows\HttpExecutor.csproj.GenerateResource.cache
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\obj\Debug\net6.0-windows\HttpExecutor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\obj\Debug\net6.0-windows\HttpExecutor.AssemblyInfoInputs.cache
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\obj\Debug\net6.0-windows\HttpExecutor.AssemblyInfo.cs
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\obj\Debug\net6.0-windows\HttpExecutor.csproj.CoreCompileInputs.cache
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\obj\Debug\net6.0-windows\HttpExecutor.dll
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\obj\Debug\net6.0-windows\refint\HttpExecutor.dll
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\obj\Debug\net6.0-windows\HttpExecutor.pdb
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\obj\Debug\net6.0-windows\HttpExecutor.genruntimeconfig.cache
+C:\Users\omara\source\repos\HttpExecutor\HttpExecutor\obj\Debug\net6.0-windows\ref\HttpExecutor.dll
