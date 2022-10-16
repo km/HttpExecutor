@@ -74,7 +74,9 @@
             // 
             // openFileDialog1
             // 
+            this.openFileDialog1.DefaultExt = "txt";
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Title = "Select text file";
             // 
             // saveFileDialog1
             // 
