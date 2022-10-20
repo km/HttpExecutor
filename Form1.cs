@@ -21,5 +21,11 @@ namespace HttpExecutor
             }
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RequestParser rp = new RequestParser(richTextBox1.Text);
+            rp.parse();
+        }
     }
 }
