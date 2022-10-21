@@ -39,21 +39,36 @@ namespace HttpExecutor
         public HttpResponseMessage parse()
         {
 
-            // Debug.WriteLine(rawRequest[rawRequest.GetLength(0)-1, 0]);
             HttpRequestMessage hrm = new HttpRequestMessage();
-            httpClient.BaseAddress = new Uri(rawRequest[0, 1]);
+            httpClient.BaseAddress = uri();
             hrm.Method = method();
             hrm.Content = httpContent();
 
             for (int i = 1; i < rawRequest.GetLength(0); i++)
             {
 
-                httpClient.DefaultRequestHeaders.TryAddWithoutValidation(rawRequest[i, 0], rawRequest[i, 1]);
-                //Debug.WriteLine(rawRequest[i, 0]);
+                hrm.Headers.TryAddWithoutValidation(rawRequest[i, 0], rawRequest[i, 1]);
             }
             return httpClient.Send(hrm);
         }
+        public Uri uri()
+        {
+            string url = rawRequest[0, 1];
+            string dir1 = "";
+            if (url.Contains("//"))
+            {
+                string dir = url.Substring(url.IndexOf("//") + 2);
+                dir1 = dir.Substring(dir.IndexOf('/'));
 
+            }
+            else
+            {
+                dir1 = url.Substring(url.IndexOf('/'));
+            }
+            
+
+            return new Uri("https://"+rawRequest[1, 1]  + dir1);   
+        }
         public HttpMethod method()
         {
             string method = rawRequest[0, 0];
@@ -70,7 +85,6 @@ namespace HttpExecutor
             {
                 content = content + "\n" + split1[i];
             }
-            //Debug.WriteLine(content);
             return new StringContent(content);
         }
 

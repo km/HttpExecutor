@@ -1,4 +1,5 @@
 using System.IO;
+using System.Diagnostics;
 namespace HttpExecutor
 {
     public partial class Form1 : Form
@@ -25,7 +26,7 @@ namespace HttpExecutor
         private void button1_Click(object sender, EventArgs e)
         {
             RequestParser rp = new RequestParser(richTextBox1.Text);
-            rp.parse();
+            Debug.WriteLine(rp.parse());
         }
     }
 }
