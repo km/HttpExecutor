@@ -12,7 +12,9 @@ namespace HttpExecutor
         private string[,] rawRequest;
         private string rawStringRequest;
         private HttpClient httpClient;
+        public static string sResponse = "";
         string[] split1;
+        
         public RequestParser(String raw_Request)
         {
             rawStringRequest = raw_Request;
@@ -93,7 +95,7 @@ namespace HttpExecutor
             response += "HTTP/" + hrm.Version + " " + Convert.ToInt32(hrm.StatusCode) + " " + hrm.ReasonPhrase;
             response += "\n" + hrm.Headers + hrm.Content.Headers;
             response += "\n" + hrm.Content.ReadAsStringAsync().Result;
-            Debug.WriteLine(response);
+            sResponse = response;
             return response;
         }
     }
