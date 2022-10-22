@@ -12,7 +12,9 @@ namespace HttpExecutor
         private string[,] rawRequest;
         private string rawStringRequest;
         private HttpClient httpClient;
+        public static string sResponse = "";
         string[] split1;
+        
         public RequestParser(String raw_Request)
         {
             rawStringRequest = raw_Request;
@@ -51,7 +53,7 @@ namespace HttpExecutor
             }
             return httpClient.Send(hrm);
         }
-        public Uri uri()
+        private Uri uri()
         {
             string url = rawRequest[0, 1];
             string dir1 = "";
@@ -69,14 +71,13 @@ namespace HttpExecutor
 
             return new Uri("https://"+rawRequest[1, 1]  + dir1);   
         }
-        public HttpMethod method()
+        private HttpMethod method()
         {
             string method = rawRequest[0, 0];
             HttpMethod h = new HttpMethod(method);
             return h;
         }
-
-        public StringContent httpContent()
+        private StringContent httpContent()
         {
 
             int cont = Array.IndexOf(split1, String.Empty) + 1;
@@ -88,5 +89,14 @@ namespace HttpExecutor
             return new StringContent(content);
         }
 
+        public String response(HttpResponseMessage hrm)
+        {
+            string response = "";
+            response += "HTTP/" + hrm.Version + " " + Convert.ToInt32(hrm.StatusCode) + " " + hrm.ReasonPhrase;
+            response += "\n" + hrm.Headers + hrm.Content.Headers;
+            response += "\n" + hrm.Content.ReadAsStringAsync().Result;
+            sResponse = response;
+            return response;
+        }
     }
 }

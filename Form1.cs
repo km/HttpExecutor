@@ -26,7 +26,15 @@ namespace HttpExecutor
         private void button1_Click(object sender, EventArgs e)
         {
             RequestParser rp = new RequestParser(richTextBox1.Text);
-            Debug.WriteLine(rp.parse());
+            rp.response(rp.parse());
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
