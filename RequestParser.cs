@@ -94,9 +94,16 @@ namespace HttpExecutor
             string response = "";
             response += "HTTP/" + hrm.Version + " " + Convert.ToInt32(hrm.StatusCode) + " " + hrm.ReasonPhrase;
             response += "\n" + hrm.Headers + hrm.Content.Headers;
-            response += "\n" + hrm.Content.ReadAsStringAsync().Result;
+            response += "\n" + getResponseContent(hrm);
             sResponse = response;
+            Response.response = hrm; 
             return response;
         }
+        private string getResponseContent(HttpResponseMessage hrm)
+        {
+            var contents =  hrm.Content.ReadAsByteArrayAsync().Result;
+            return Encoding.UTF8.GetString(contents);
+        }
+
     }
 }
