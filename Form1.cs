@@ -25,16 +25,27 @@ namespace HttpExecutor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            RequestParser rp = new RequestParser(richTextBox1.Text);
-            rp.response(rp.parse());
-            Form2 f2 = new Form2();
-            f2.ShowDialog();
+            try
+            {
+                RequestParser rp = new RequestParser(richTextBox1.Text);
+                rp.response(rp.parse());
+                Form2 f2 = new Form2();
+                f2.ShowDialog();
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+           
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            var file = File.CreateText(@"Responses\"+DateTime.Now.ToFileTime()+".txt");
+            file.Write(RequestParser.sResponse);
+            file.Flush();
+            file.Close();
         }
     }
 }
