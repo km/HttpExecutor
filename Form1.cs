@@ -44,15 +44,17 @@ namespace HttpExecutor
         {
             try
             {
+                System.IO.Directory.CreateDirectory(@"Responses");
                 var file = File.CreateText(@"Responses\" + DateTime.Now.ToFileTime() + ".txt");
                 file.Write(RequestParser.sResponse);
                 file.Flush();
                 file.Close();
+                MessageBox.Show("Successfully saved response!");
             }
-            catch (Exception)
+            catch (Exception a)
             {
 
-                MessageBox.Show("Couldn't save response");
+                MessageBox.Show(a.Message);
             }
             
          
