@@ -10,7 +10,7 @@ HTTP Executor is a tool designed for effortlessly executing raw HTTP requests. S
 1.  [Features](#features)
 2.  [Installation](#installation)
 3.  [Usage](#usage)
-    -   [Executing Requests](#executing-requests)]
+    -   [Executing Requests](#executing-requests)
 
 ----------
 
