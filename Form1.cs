@@ -34,7 +34,7 @@ namespace HttpExecutor
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.ToString());
+                MessageBox.Show("Invalid Request");
             }
            
 
@@ -42,10 +42,20 @@ namespace HttpExecutor
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var file = File.CreateText(@"Responses\"+DateTime.Now.ToFileTime()+".txt");
-            file.Write(RequestParser.sResponse);
-            file.Flush();
-            file.Close();
+            try
+            {
+                var file = File.CreateText(@"Responses\" + DateTime.Now.ToFileTime() + ".txt");
+                file.Write(RequestParser.sResponse);
+                file.Flush();
+                file.Close();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Couldn't save response");
+            }
+            
+         
         }
     }
 }

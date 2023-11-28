@@ -24,7 +24,14 @@ namespace HttpExecutor
         public string content()
         {
             var contents = response.Content.ReadAsByteArrayAsync().Result;
-            return Encoding.UTF8.GetString(contents);
+            string finalcontent = Encoding.UTF8.GetString(contents);
+
+            if (finalcontent != null && finalcontent != "")
+            {
+                return finalcontent;
+            }
+
+            return " ";
         }
     }
 }

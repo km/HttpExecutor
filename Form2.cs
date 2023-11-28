@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,7 @@ namespace HttpExecutor
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Debug.WriteLine(r.content());
             Clipboard.SetText(r.content());
         }
 
